@@ -4,7 +4,7 @@ import GameOfLife.UI.GUI;
 
 public class GameController {
     private Universe model;
-    private GUI view;
+    private final GUI view;
 
 
     public GameController(int sizeOfUniverse) {

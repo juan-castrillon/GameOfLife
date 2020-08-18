@@ -5,10 +5,10 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class ControlPanel extends JPanel {
-    private InfoPanel labels;
-    private ButtonPanel buttons;
-    private SpeedPanel speed;
-    private NewGamePanel ng;
+    private final InfoPanel labels;
+    private final ButtonPanel buttons;
+    private final SpeedPanel speed;
+    private final NewGamePanel ng;
 
     public ControlPanel() {
         setBorder( new EmptyBorder(5,5,0,10));

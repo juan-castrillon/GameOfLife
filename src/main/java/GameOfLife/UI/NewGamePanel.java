@@ -6,7 +6,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class NewGamePanel extends JPanel {
-    private JTextField newSize;
+    private final JTextField newSize;
     private boolean newGame;
 
     public NewGamePanel() {
@@ -49,8 +49,5 @@ public class NewGamePanel extends JPanel {
     }
     public void setNewGame(boolean newGame) {
         this.newGame = newGame;
-    }
-    public void visible(boolean visible) {
-        setVisible(visible);
     }
 }

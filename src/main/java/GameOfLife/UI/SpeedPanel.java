@@ -22,9 +22,7 @@ public class SpeedPanel extends JPanel {
 
         setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
 
-        slider.addChangeListener(e -> {
-            title.setText("Evolution Speed (ms): " + slider.getValue());
-        });
+        slider.addChangeListener(e -> title.setText("Evolution Speed (ms): " + slider.getValue()));
     }
     public int getSpeed() {
         return slider.getValue();

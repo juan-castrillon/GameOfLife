@@ -1,8 +1,5 @@
 package GameOfLife.UI;
 
-import GameOfLife.UI.CellGrid;
-import GameOfLife.UI.ControlPanel;
-
 import javax.swing.*;
 import java.awt.*;
 
