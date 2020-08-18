@@ -1,14 +1,17 @@
-package GameOfLife;
+package GameOfLife.UI;
+
+import GameOfLife.UI.CellGrid;
+import GameOfLife.UI.ControlPanel;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class GameOfLife extends JFrame {
+public class GUI extends JFrame{
     private ControlPanel control;
     private CellGrid grid;
     private int sizeOfUniverse;
 
-    public GameOfLife() {
+    public GUI() {
         super("Game of Life v1");
         this.sizeOfUniverse = 20;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,40 +70,9 @@ public class GameOfLife extends JFrame {
         return sizeOfUniverse;
     }
 
-    public void updateGUI(int gen, int alive, boolean[][] state) {
+    public void update(int gen, int alive, boolean[][] state) {
         this.control.setLabels(gen,alive);
         this.grid.setState(state);
         this.repaint();
-    }
-
-    public static void main(String[] args) {
-        final int initSize = 20;
-        GameOfLife game = new GameOfLife();
-        GameController controller = new GameController(initSize);
-        boolean playing;
-        boolean showingNewGame = false;
-        int cont = 1;
-        while(true) {
-            playing = game.isPlaying();
-            while (!playing) {
-                playing = game.isPlaying();
-            }
-            controller.nextGen();
-            game.updateGUI(cont, controller.alive(), controller.currentState());
-            try {
-                Thread.sleep(game.getSpeed());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            cont++;
-            if (game.isReset() || game.isNewGame()){
-                int size = game.isNewGame() ? game.getNewSize() : initSize;
-                controller = new GameController(size);
-                game.setSizeOfUniverse(size);
-                cont = 1;
-                game.reset();
-            }
-            game.showNewGame(game.isShowNewGame());
-        }
     }
 }

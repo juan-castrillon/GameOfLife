@@ -1,4 +1,4 @@
-package GameOfLife;
+package GameOfLife.UI;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
